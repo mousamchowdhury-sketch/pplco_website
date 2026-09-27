@@ -1,0 +1,1 @@
+pplco responsive website. Upload this folder to Netlify, Vercel, GitHub Pages or cPanel. Connect the contact form to your CRM/email endpoint before production. Replace hello@pplco.in if needed.

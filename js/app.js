@@ -1,0 +1,1 @@
+const m=document.getElementById('menu'),l=document.getElementById('links');m.onclick=()=>l.classList.toggle('open');document.querySelectorAll('#links a').forEach(a=>a.onclick=()=>l.classList.remove('open'));document.getElementById('form').onsubmit=e=>{e.preventDefault();document.getElementById('success').style.display='block';e.target.reset()};
