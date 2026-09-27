@@ -207,29 +207,43 @@
         </section>
         <section id="contact" class="contact">
             <div class="wrap contactgrid">
-                <div><label>LET'S TALK</label>
+                <div>
+                    <label>LET'S TALK</label>
                     <h2>Have work to<br><em>move?</em></h2>
                     <p>Tell us what you need help with. We’ll understand your process and explore whether a pilot makes
                         sense.</p>
                     <p>✉ <b>hello@pplco.net</b><br>◌ Kolkata, India · serving global clients</p>
                 </div>
-                <form id="form">
-                    <div class="row"><label>Full name<input required name="name"
-                                placeholder="Your name"></label><label>Work email<input required type="email"
-                                name="email" placeholder="you@company.com"></label></div>
-                    <div class="row"><label>Company<input name="company" placeholder="Company name"></label><label>Seats
-                            needed<select name="seats">
+                <form id="form" action="https://api.web3forms.com/submit" method="POST">
+                    <!-- Web3Forms Access Key -->
+                    <input type="hidden" name="access_key" value="7a1e70de-9eb9-407b-9bbc-40a6130b8265">
+
+                    <!-- Configures subject line of incoming notification emails -->
+                    <input type="hidden" name="subject" value="New Pilot Lead from pplco.net">
+
+                    <div class="row">
+                        <label>Full name<input required name="name" placeholder="Your name"></label>
+                        <label>Work email<input required type="email" name="email"
+                                placeholder="you@company.com"></label>
+                    </div>
+                    <div class="row">
+                        <label>Company<input name="company" placeholder="Company name"></label>
+                        <label>Seats needed
+                            <select name="seats">
                                 <option>10–20 seats</option>
                                 <option>20–50 seats</option>
                                 <option>50–100 seats</option>
                                 <option>100+ seats</option>
                                 <option>Not sure yet</option>
-                            </select></label></div><label>What can we help with?<textarea required name="message"
-                            rows="5"
-                            placeholder="Tell us about the process, support volume or challenge..."></textarea></label><button
-                        class="btn" type="submit">Request a Discovery Call ↗</button><small>Demo form: connect this
-                        endpoint to your CRM/email provider before launch.</small>
-                    <div id="success">Thanks — your enquiry has been captured in this demo.</div>
+                            </select>
+                        </label>
+                    </div>
+                    <label>What can we help with?
+                        <textarea required name="message" rows="5"
+                            placeholder="Tell us about the process, support volume or challenge..."></textarea>
+                    </label>
+                    <button class="btn" type="submit">Request a Discovery Call ↗</button>
+                    <div id="success">Thanks — your enquiry has been sent! We will get back to you shortly.</div>
                 </form>
             </div>
         </section>
