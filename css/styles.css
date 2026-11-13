@@ -54,25 +54,15 @@ header {
 }
 
 .logo {
-    font: 700 29px/1 "Calibre", sans-serif;
-    letter-spacing: -1px;
-    position: relative;
-    color: var(--ink)
+    display: inline-flex;
+    align-items: center;
 }
 
-.logo b {
-    font-weight: 700;
-    color: #55bcd6
-}
-
-.logo small {
-    position: absolute;
-    left: 1px;
-    top: 38px;
-    font: 700 8px "Calibre", sans-serif;
-    letter-spacing: .8px;
-    white-space: nowrap;
-    color: var(--muted)
+.logo img {
+    height: 46px;
+    width: auto;
+    display: block;
+    border-radius: 6px;
 }
 
 .nav div {
@@ -528,24 +518,16 @@ h2 em {
 }
 
 .mark {
-    font: 700 100px/1 "Calibre", sans-serif;
-    letter-spacing: -4px;
-    color: var(--ink);
-    position: relative
+    display: flex;
+    align-items: center;
 }
 
-.mark b {
-    color: #55bcd6
-}
-
-.mark small {
-    position: absolute;
-    bottom: -34px;
+.mark img {
+    max-width: 280px;
+    width: 100%;
+    height: auto;
     display: block;
-    font: 700 24px "Calibre", sans-serif;
-    letter-spacing: 1px;
-    margin-left: 5px;
-    color: var(--muted)
+    border-radius: 12px;
 }
 
 .about p {
@@ -638,20 +620,25 @@ footer {
     padding: 55px 0 20px
 }
 
-.foot {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 50px
+footer .logo img {
+    height: 44px;
 }
 
-.foot>div:not(:first-child) {
+.foot {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.2fr;
+    gap: 40px;
+    align-items: start
+}
+
+.foot>div:not(.csr-col) {
     display: flex;
     flex-direction: column;
     gap: 9px;
     font-size: 12px
 }
 
-.foot>div:not(:first-child)>b {
+.foot>div:not(.csr-col)>b {
     font-size: 9px;
     color: var(--green);
     letter-spacing: 1.3px
@@ -664,7 +651,38 @@ footer {
 .foot p {
     color: #a8c0c4;
     font-size: 11px;
-    margin-top: 25px
+    margin-top: 18px
+}
+
+/* CSR Column & Logo Styles */
+.csr-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px
+}
+
+.csr-col b {
+    font-size: 9px;
+    color: var(--green);
+    letter-spacing: 1.3px
+}
+
+.cry-badge {
+    display: inline-block;
+    width: 130px;
+    transition: transform 0.2s ease, opacity 0.2s ease
+}
+
+.cry-badge:hover {
+    transform: translateY(-2px);
+    opacity: 0.95
+}
+
+.cry-badge img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px
 }
 
 .copyright {
@@ -733,75 +751,6 @@ footer {
         grid-template-columns: 1fr 1fr
     }
 
-    footer {
-        background: #0f3034;
-        color: var(--white);
-        padding: 55px 0 20px
-    }
-
-    .foot {
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr 1.2fr;
-        gap: 40px;
-        align-items: start
-    }
-
-    .foot>div:not(.csr-col) {
-        display: flex;
-        flex-direction: column;
-        gap: 9px;
-        font-size: 12px
-    }
-
-    .foot>div:not(.csr-col)>b {
-        font-size: 9px;
-        color: var(--green);
-        letter-spacing: 1.3px
-    }
-
-    .foot a {
-        color: #c8dcdf
-    }
-
-    .foot p {
-        color: #a8c0c4;
-        font-size: 11px;
-        margin-top: 25px
-    }
-
-    /* CSR Column & Logo Styles */
-    .csr-col {
-        display: flex;
-        flex-direction: column;
-        gap: 12px
-    }
-
-    .csr-col b {
-        font-size: 9px;
-        color: var(--green);
-        letter-spacing: 1.3px
-    }
-
-    .cry-badge {
-        display: inline-block;
-        width: 130px;
-        transition: transform 0.2s ease, opacity 0.2s ease
-    }
-
-    .cry-badge:hover {
-        transform: translateY(-2px);
-        opacity: 0.95
-    }
-
-    .cry-badge img {
-        width: 100%;
-        height: auto;
-        display: block;
-        border-radius: 4px
-    }
-}
-
-@media(max-width:850px) {
     .foot {
         grid-template-columns: 1fr 1fr;
         gap: 30px
@@ -857,11 +806,7 @@ footer {
         gap: 40px
     }
 
-    .mark {
-        font-size: 75px
-    }
-
-    .foot {
-        grid-template-columns: 1fr
+    .mark img {
+        max-width: 210px
     }
 }

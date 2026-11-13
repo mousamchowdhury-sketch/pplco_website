@@ -1,4 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menu');
+    const navLinks = document.getElementById('links');
+
+    if (menuBtn && navLinks) {
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+
+        // Close menu when any navigation link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+            });
+        });
+    }
+
+    // Contact form submission
     const form = document.getElementById('form');
     const successMsg = document.getElementById('success');
 
@@ -23,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     alert('Something went wrong. Please try submitting again.');
                 }
             } catch (error) {
-                alert('Form submission failed. Please check your network connection or email hello@pplco.net directly.');
+                alert('Form submission failed. Please check your network connection or email connect@peoplespirit.in directly.');
             }
         });
     }
